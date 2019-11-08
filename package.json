@@ -1,0 +1,25 @@
+{
+  "name": "onum",
+  "version": "1.0.0",
+  "description": "A time management app to help students manage their time",
+  "main": "onum.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chiq2045/onum.git"
+  },
+  "keywords": [
+    "koa",
+    "react",
+    "time",
+    "management"
+  ],
+  "author": "Charles Oroko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chiq2045/onum/issues"
+  },
+  "homepage": "https://github.com/chiq2045/onum#readme"
+}
