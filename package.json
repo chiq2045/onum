@@ -23,8 +23,11 @@
   },
   "homepage": "https://github.com/chiq2045/onum#readme",
   "dependencies": {
+    "@koa/router": "^8.0.2",
     "dotenv": "^8.2.0",
-    "koa": "^2.11.0"
+    "koa": "^2.11.0",
+    "koa-body": "^4.1.1",
+    "koa-logger": "^3.2.1"
   },
   "devDependencies": {
     "eslint": "^6.6.0",
