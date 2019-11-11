@@ -4,10 +4,10 @@ require('dotenv').config({ path: path.resolve(`${__dirname}/.env`) });
 const Koa = require('koa');
 const logger = require('koa-logger');
 const koaBody = require('koa-body');
-const notFound = require('./backend/404.js');
+const notFound = require(`${__dirname}/backend/404.js`);
 
 const onum = new Koa();
-const home = require('./backend/routes/home.js');
+const home = require(`${__dirname}/backend/routes/home.js`);
 onum.use(logger()).use(koaBody());
 onum.use(home.routes());
 

@@ -8,4 +8,4 @@ router.get('home', '/', (ctx, next) => {
   ctx.body = 'This is the homepage';
 });
 
-module.export = router;
+module.exports = router;
