@@ -1,6 +1,7 @@
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import { MongoClient, Db } from 'mongodb';
 import { LoremIpsum } from 'lorem-ipsum';
+import { nanoid } from 'nanoid';
 
 const lorem = new LoremIpsum({
   sentencesPerParagraph: {
@@ -40,30 +41,30 @@ export const testDatabase = async () => {
     database = client.db();
     await database
       .collection('hello')
-      .insertOne({ id: 1, message: 'Hello, World' });
+      .insertOne({ id: nanoid(), message: 'Hello, World' });
     await database.collection('notes').insertMany([
       {
-        id: 1,
+        id: nanoid(),
         note: lorem.generateParagraphs(1),
         date: new Date(2022, 0, 29)
       },
       {
-        id: 2,
+        id: nanoid(),
         note: lorem.generateParagraphs(1),
         date: new Date(2022, 1, 1)
       },
       {
-        id: 3,
+        id: nanoid(),
         note: lorem.generateParagraphs(1),
         date: new Date(2022, 1, 2)
       },
       {
-        id: 4,
+        id: nanoid(),
         note: lorem.generateParagraphs(1),
         date: new Date(2022, 1, 3)
       },
       {
-        id: 5,
+        id: nanoid(),
         note: lorem.generateParagraphs(1),
         date: new Date(2022, 1, 4)
       }

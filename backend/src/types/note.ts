@@ -1,5 +1,5 @@
 export type Note = {
   date: string;
-  id: number;
+  id: string;
   note: string;
 }
