@@ -6,8 +6,16 @@ export const schema = buildSchema(`
     message: String!
   }
 
+  type Note {
+    id: ID!
+    note: String!
+    date: String!
+  }
+
   type Query {
     hello: [Hello!]!
     helloWorld: String!
+    notes: [Note]
+    note(id: Int!): Note
   }
 `);

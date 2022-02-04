@@ -1,5 +1,17 @@
 import { MongoMemoryServer } from 'mongodb-memory-server';
 import { MongoClient, Db } from 'mongodb';
+import { LoremIpsum } from 'lorem-ipsum';
+
+const lorem = new LoremIpsum({
+  sentencesPerParagraph: {
+    max: 8,
+    min: 4
+  },
+  wordsPerSentence: {
+    max: 16,
+    min: 4
+  }
+});
 
 const {
   DB_PREFIX: prefix,
@@ -29,6 +41,33 @@ export const testDatabase = async () => {
     await database
       .collection('hello')
       .insertOne({ id: 1, message: 'Hello, World' });
+    await database.collection('notes').insertMany([
+      {
+        id: 1,
+        note: lorem.generateParagraphs(1),
+        date: new Date(2022, 0, 29)
+      },
+      {
+        id: 2,
+        note: lorem.generateParagraphs(1),
+        date: new Date(2022, 1, 1)
+      },
+      {
+        id: 3,
+        note: lorem.generateParagraphs(1),
+        date: new Date(2022, 1, 2)
+      },
+      {
+        id: 4,
+        note: lorem.generateParagraphs(1),
+        date: new Date(2022, 1, 3)
+      },
+      {
+        id: 5,
+        note: lorem.generateParagraphs(1),
+        date: new Date(2022, 1, 4)
+      }
+    ]);
   }
 
   return database;
