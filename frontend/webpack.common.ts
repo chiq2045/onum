@@ -1,34 +1,10 @@
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import { TsconfigPathsPlugin } from 'tsconfig-paths-webpack-plugin';
 import { resolve } from 'path';
+import { Configuration } from 'webpack';
 
-const mode = process.env.NODE_ENV || 'production';
-const devMode = mode === 'development';
-const plugins = [
-  new HtmlWebpackPlugin({
-    template: resolve(__dirname, 'src', 'index.html')
-  }),
-  new MiniCssExtractPlugin({
-    filename: devMode ? '[id].css' : '[id].[contenthash].css'
-  }),
-  new ForkTsCheckerWebpackPlugin({
-    async: false,
-    eslint: {
-      files: './src/**/*'
-    }
-  })
-];
-
-module.exports = {
-  mode,
+const config: Configuration = {
   entry: resolve(__dirname, 'src', 'index.tsx'),
-  output: {
-    path: resolve(__dirname, 'dist'),
-    filename: devMode ? '[name].bundle.js' : '[name].[contenthash].js',
-    publicPath: '/'
-  },
   optimization: {
     runtimeChunk: 'single',
     splitChunks: {
@@ -73,20 +49,6 @@ module.exports = {
     extensions: ['*', '.js', '.ts', '.jsx', '.tsx', '.json', '.css'],
     plugins: [new TsconfigPathsPlugin()]
   },
-  devServer: {
-    static: {
-      publicPath: '/'
-    },
-    client: {
-      overlay: {
-        errors: true,
-        warnings: false
-      },
-      progress: true
-    },
-    port: 9000,
-    historyApiFallback: true,
-    hot: true
-  },
-  plugins
 };
+
+export default config;
