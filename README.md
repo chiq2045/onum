@@ -4,7 +4,6 @@ The Onus is on Me!
 
 A diary app for people who want to keep themselves accountable.
 
-- Connect with your accountability partner, giving them access to your entries
 - Mark activities each day with customizable tags
 - Count up your successful days
 - Share your progress with others
