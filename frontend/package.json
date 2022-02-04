@@ -4,7 +4,9 @@
   "description": "A template to create a frontend react project",
   "scripts": {
     "dev": "webpack serve --progress --color --config webpack.dev.ts",
-    "start": "webpack --progress --color --config webpack.prod.ts"
+    "start": "webpack --progress --color --config webpack.prod.ts",
+    "cosmos": "cosmos",
+    "cosmos:export": "cosmos-export"
   },
   "repository": {
     "type": "git",
@@ -27,6 +29,7 @@
     "@types/mini-css-extract-plugin": "^2.3.0",
     "@types/react": "^17.0.26",
     "@types/react-dom": "^17.0.9",
+    "@types/uikit": "^3.3.2",
     "@types/webpack": "^5.28.0",
     "@types/webpack-dev-server": "^4.1.0",
     "@typescript-eslint/eslint-plugin": "^4.32.0",
@@ -46,6 +49,7 @@
     "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^2.3.0",
     "prettier": "^2.4.1",
+    "react-cosmos": "^5.6.8",
     "ts-node": "^10.2.1",
     "tsconfig-paths-webpack-plugin": "^3.5.1",
     "typescript": "^4.4.3",
@@ -56,6 +60,8 @@
   },
   "dependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^6.2.1",
+    "uikit": "^3.10.1"
   }
 }

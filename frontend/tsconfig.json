@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "CommonJS",
+    "target": "ESNext",
     "allowJs": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
@@ -18,5 +20,5 @@
       "views": ["views"]
     }
   },
-  "include": ["src", "babel.config.json"]
+  "include": ["src", "babel.config.json", "webpack.common.ts", "webpack.dev.ts", "webpack.prod.ts", "webpack.cosmos.js"]
 }

@@ -6,16 +6,7 @@ import { Configuration } from 'webpack';
 const config: Configuration = {
   entry: resolve(__dirname, 'src', 'index.tsx'),
   optimization: {
-    runtimeChunk: 'single',
-    splitChunks: {
-      cacheGroups: {
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all'
-        }
-      }
-    }
+    runtimeChunk: true,
   },
   module: {
     rules: [

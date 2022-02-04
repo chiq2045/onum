@@ -31,4 +31,4 @@ const config: Configuration = merge(common, {
   plugins
 });
 
-export default common;
+export default config;
