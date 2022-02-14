@@ -29,6 +29,7 @@ export const resolvers = {
   },
   notes: async (_: Partial<Note>, context: any) => {
     const db: Db = await context();
+    console.log('here');
     return db.collection('notes').find().toArray();
   },
   note: async ({ id }: Pick<Note, 'id'>, context: any) => {

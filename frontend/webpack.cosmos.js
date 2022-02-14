@@ -1,8 +1,11 @@
-const MiniCssExtractPlugin  = require('mini-css-extract-plugin');
+/* eslint-disable @typescript-eslint/no-var-requires */
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
-const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin').TsconfigPathsPlugin
+const TsconfigPathsPlugin =
+  require('tsconfig-paths-webpack-plugin').TsconfigPathsPlugin;
 const resolve = require('path').resolve;
+const EvironmentPlugin = require('webpack').EnvironmentPlugin;
 
 const plugins = [
   new HtmlWebpackPlugin({
@@ -16,6 +19,9 @@ const plugins = [
     eslint: {
       files: './src/**/*'
     }
+  }),
+  new EvironmentPlugin({
+    NODE_ENV: 'cosmos'
   })
 ];
 
@@ -44,7 +50,7 @@ const config = {
   mode: 'development',
   entry: resolve(__dirname, 'src', 'index.tsx'),
   optimization: {
-    runtimeChunk: true,
+    runtimeChunk: true
   },
   module: {
     rules: [
@@ -77,7 +83,7 @@ const config = {
   resolve: {
     extensions: ['*', '.js', '.ts', '.jsx', '.tsx', '.json', '.css'],
     plugins: [new TsconfigPathsPlugin()]
-  },
+  }
 };
 
 module.exports = config;

@@ -1,0 +1,4 @@
+{
+  "dev": "http://localhost:3000/dev",
+  "prod": "http://localhost:3000/graphql"
+}

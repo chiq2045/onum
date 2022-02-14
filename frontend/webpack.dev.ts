@@ -3,8 +3,8 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import { resolve } from 'path';
 import { Configuration as DevServerConfiguration } from 'webpack-dev-server';
-import webpack from 'webpack';
-import {merge}from 'webpack-merge';
+import webpack, { EnvironmentPlugin } from 'webpack';
+import { merge } from 'webpack-merge';
 import common from './webpack.common';
 
 const plugins = [
@@ -19,12 +19,15 @@ const plugins = [
     eslint: {
       files: './src/**/*'
     }
+  }),
+  new EnvironmentPlugin({
+    NODE_ENV: 'development'
   })
 ];
 
 declare module 'webpack' {
   interface Configuration {
-    devServer?: DevServerConfiguration
+    devServer?: DevServerConfiguration;
   }
 }
 
@@ -51,6 +54,6 @@ const config: webpack.Configuration = merge(common, {
     hot: true
   },
   plugins
-})
+});
 
 export default config;

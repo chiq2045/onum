@@ -20,5 +20,11 @@
       "views": ["views"]
     }
   },
-  "include": ["src", "babel.config.json", "webpack.common.ts", "webpack.dev.ts", "webpack.prod.ts", "webpack.cosmos.js"]
+  "include": [
+    "src",
+    "webpack.common.ts",
+    "webpack.dev.ts",
+    "webpack.prod.ts",
+    "webpack.cosmos.js"
+  ]
 }

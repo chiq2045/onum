@@ -27,9 +27,15 @@ interface ButtonProps {
     | '1-6'
     | '5-6';
   disabled?: boolean;
-  dropdownMenu?: ReactNode
+  dropdownMenu?: ReactNode;
   children: ReactNode;
 }
+
+/**
+ * Creates a button
+ *
+ * Note: dropdownMenu is currently not working, and should not be used
+ */
 export const Button = ({
   type = 'button',
   href,
@@ -57,11 +63,11 @@ export const Button = ({
     );
   }
   return (
-    <>
-    <button className={classNameValue} type={type} disabled={disabled}>
-      {children}
-    </button>
-      {dropdownMenu}
-    </>
+    <div className={dropdownMenu ? 'uk-inline' : ''}>
+      <button className={classNameValue} type={type} disabled={disabled}>
+        {children}
+      </button>
+      {dropdownMenu ? <div className='uk-dropdown'>{dropdownMenu}</div> : null}
+    </div>
   );
 };
