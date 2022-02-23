@@ -29,18 +29,6 @@ module.exports = {
     filename: devMode ? '[name].bundle.js' : '[name].[contenthash].js',
     publicPath: '/'
   },
-  optimization: {
-    runtimeChunk: 'single',
-    splitChunks: {
-      cacheGroups: {
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all'
-        }
-      }
-    }
-  },
   module: {
     rules: [
       {
