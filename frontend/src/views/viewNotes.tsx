@@ -1,18 +1,12 @@
 import React, { useMemo } from 'react';
-import { gql, OperationVariables, QueryResult, useQuery } from '@apollo/client';
+import { OperationVariables, QueryResult, useQuery } from '@apollo/client';
 import { Note } from 'utils/types';
 import { Loader } from 'components/loader';
 import { Text } from 'components/text';
-
-const GET_NOTES = gql`
-  query getNotes {
-    notes {
-      id
-      date
-      note
-    }
-  }
-`;
+import { List } from 'components/list';
+import { Card } from 'components/card';
+import { Link } from 'react-router-dom';
+import {GET_NOTES} from 'utils/constants/queries';
 
 export const ViewNotes = () => {
   const { loading, error, data } = useQuery(GET_NOTES) as QueryResult<
@@ -30,19 +24,32 @@ export const ViewNotes = () => {
   return (
     <>
       <h1> View All Notes</h1>
-      <ul>
+      <List>
         {loading ? <Loader /> : null}
         {error ? <Text>{error.message}</Text> : null}
         {notes.length > 0 ? (
           notes.map((note) => (
-            <li key={`${note.id}-${note.date}`}>{note.note}</li>
+            <li key={`${note.id}-${note.date}`}>
+              <Link to={note.id}>
+                <Card
+                  size='small'
+                  hover
+                  body
+                  title={(className) => (
+                    <Text className={className}>{note.date}</Text>
+                  )}
+                >
+                  <Text wrap='truncate'>{note.note}</Text>
+                </Card>
+              </Link>
+            </li>
           ))
         ) : (
-          <Text size='large' color='warning'>
+          <Text wrap='truncate' size='large' color='warning'>
             No Notes Available
           </Text>
         )}
-      </ul>
+      </List>
     </>
   );
 };

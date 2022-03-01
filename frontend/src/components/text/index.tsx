@@ -67,9 +67,9 @@ interface TextProps {
  * Stylized text component
  */
 export const Text = ({
-  size = 'default',
+  size,
   className = '',
-  weight = 'normal',
+  weight,
   italic,
   transform,
   color,
