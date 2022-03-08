@@ -18,5 +18,5 @@
       "views": ["views"]
     }
   },
-  "include": ["src", "babel.config.json"]
+  "include": ["src", "webpack.*"]
 }
