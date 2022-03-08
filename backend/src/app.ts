@@ -11,17 +11,17 @@ import { schema } from './schema';
 import { resolvers } from './resolvers';
 import { prodDb, testDatabase } from './database';
 
+const { NODE_ENV } = process.env;
+const devMode = NODE_ENV === 'test' || NODE_ENV === 'development';
+
 const app = new Koa();
-const context = async () =>
-  process.env.NODE_ENV === 'test' || process.env.NODE_ENV === 'development'
-    ? await testDatabase()
-    : await prodDb();
+const context = async () => (devMode ? await testDatabase() : await prodDb());
 
 app.use(logger());
 app.use(cors());
 app.use(
   mount(
-    '/graphql',
+    `/${devMode ? 'dev' : 'graphql'}`,
     graphqlHTTP({
       schema,
       rootValue: resolvers,

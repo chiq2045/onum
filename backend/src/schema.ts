@@ -16,7 +16,7 @@ export const schema = buildSchema(`
     hello: [Hello!]!
     helloWorld: String!
     notes: [Note]!
-    note(id: Int!): Note
+    note(id: ID!): Note
   }
 
   type NoteReturnMessage {
