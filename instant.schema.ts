@@ -11,20 +11,20 @@ const _schema = i.schema({
 			created: i.date(),
 			updated: i.date().optional(),
 			due: i.date().optional()
-		}),
-		projects: i.entity({
-			title: i.string(),
-			completed: i.boolean(),
-			created: i.date(),
-			updated: i.date().optional(),
-			due: i.date().optional()
 		})
+		// projects: i.entity({
+		// 	title: i.string(),
+		// 	completed: i.boolean(),
+		// 	created: i.date(),
+		// 	updated: i.date().optional(),
+		// 	due: i.date().optional()
+		// })
 	},
 	links: {
-		todoProject: {
-			forward: { on: 'todos', has: 'one', label: 'project' },
-			reverse: { on: 'projects', has: 'many', label: 'todos' }
-		}
+		// todoProject: {
+		// 	forward: { on: 'todos', has: 'one', label: 'project' },
+		// 	reverse: { on: 'projects', has: 'many', label: 'todos' }
+		// }
 	}
 });
 
