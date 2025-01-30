@@ -11,6 +11,16 @@ const db = init({
 export const api = {
 	// getAllData: async () => db.query({ todos: {}, projects: {} }),
 	getAllTodos: async () => db.query({ todos: {} }),
+	getTodo: async (todoId: string) =>
+		db.query({
+			todos: {
+				$: {
+					where: {
+						id: todoId
+					}
+				}
+			}
+		}),
 	// getAllProjects: async () => await db.query({ projects: {} }),
 	// getProjectById: async (projectId: string) =>
 	// 	await db.query({

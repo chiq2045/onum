@@ -31,6 +31,9 @@
 			list-style-type: none;
 			padding: 0;
 		}
+		.icon {
+			width: 24px;
+		}
 	}
 	:root {
 		--color-check-green: #34b233;
