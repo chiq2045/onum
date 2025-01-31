@@ -31,12 +31,16 @@
 			list-style-type: none;
 			padding: 0;
 		}
-		.icon {
-			width: 24px;
+		.icon-sm {
+			width: 1.5rem;
+		}
+		.icon-md {
+			width: 3rem;
 		}
 	}
 	:root {
-		--color-check-green: #34b233;
+		--color-success: #34b233;
+		--color-failure: #ed4337;
 	}
 	/* .container {
 		padding-left: 8px;
