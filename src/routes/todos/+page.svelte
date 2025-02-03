@@ -61,7 +61,7 @@
 					</div>
 					<div class="flex-container centered-items">
 						<div class="flex-container centered-items">
-							<p>Due: {todo.due ? new Date(todo.due).toDateString() : '-'}</p>
+							<p>Due: {todo.due ? new Date(todo.due).toLocaleDateString() : '-'}</p>
 						</div>
 						<button
 							class="button icon-only"
