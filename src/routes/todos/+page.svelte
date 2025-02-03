@@ -60,9 +60,9 @@
 						<p>{todo.title}</p>
 					</div>
 					<div class="flex-container centered-items">
-						<div class="flex-container centered-items">
+						<!-- <div class="flex-container centered-items">
 							<p>Due: {todo.due ? new Date(todo.due).toLocaleDateString() : '-'}</p>
-						</div>
+						</div> -->
 						<button
 							class="button icon-only"
 							onclick={() => {
@@ -120,10 +120,10 @@
 			Title
 			<input type="text" name="title" required value={editTodoModalData?.title} />
 		</label>
-		<label>
+		<!-- <label>
 			Due
 			<input type="date" name="due" value={editTodoModalData?.due} />
-		</label>
+		</label> -->
 		<button
 			type="button"
 			onclick={() => {
@@ -144,10 +144,10 @@
 			Title
 			<input type="text" name="title" required value={editTodoModalData?.title} />
 		</label>
-		<label>
+		<!-- <label>
 			Due
 			<input type="date" name="due" value={editTodoModalData?.due} />
-		</label>
+		</label> -->
 		<label>
 			Completed
 			<input type="checkbox" name="completed" value={editTodoModalData?.completed} />
